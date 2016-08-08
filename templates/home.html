@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div ng-controller="MainController">
+
+	<br><br>
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-sm-2 col-sm-offset-2 control-label" for="nameField">User:</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="nameField" type="text" ng-model="name" ng-model-options="{ debounce : 800}" placeholder="Name">
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4 col-sm-offset-4">
+		<input class="btn btn-primary" type="button" value="Get topics" ng-click="getTopics()">
+	</div>
+
+	<div id="user-list" ng-include="templates/partials/user-list.html"></div>
+	<div id="topic-list" ng-include="templates/partials/topic-list.html"></div>
+
+</div>
+{% endblock %}
